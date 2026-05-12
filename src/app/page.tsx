@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero";
-import Medici from "@/components/Medici";
 import Servizi from "@/components/Servizi";
-import Recensioni from "@/components/Recensioni";
+import Medici from "@/components/Medici";
+import Convenzioni from "@/components/Convenzioni";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <Servizi preview={true} />
       <Medici preview={true} />
-      <Recensioni preview={true} />
+      <Convenzioni />
       <Footer />
     </div>
   );

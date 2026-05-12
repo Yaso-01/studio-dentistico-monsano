@@ -1,57 +1,56 @@
-"use client";
-import { motion } from "framer-motion";
 import { Stethoscope, ShieldCheck, Drill, Sparkles, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const trattamenti = [
-  { icon: <Stethoscope />, title: "Igiene dentale", desc: "Trattamenti professionali per mantenere gengive sane." },
-  { icon: <Drill />, title: "Implantologia", desc: "Soluzioni fisse e definitive per denti mancanti." },
-  { icon: <ShieldCheck />, title: "Ortodonzia", desc: "Allineamento dentale per adulti e bambini." },
-  { icon: <Sparkles />, title: "Sbiancamento", desc: "Ritrova il bianco naturale del tuo sorriso." }
+  { icon: <Stethoscope size={20} />, title: "Igiene Dentale", desc: "Protocolli professionali per la salute di gengive e smalto." },
+  { icon: <Drill size={20} />, title: "Implantologia", desc: "Soluzioni fisse e definitive per denti mancanti." },
+  { icon: <ShieldCheck size={20} />, title: "Ortodonzia", desc: "Allineamento dentale per adulti e bambini." },
+  { icon: <Sparkles size={20} />, title: "Sbiancamento", desc: "Trattamento professionale per un sorriso più luminoso." },
 ];
 
 export default function Servizi({ preview = false }: { preview?: boolean }) {
   const displayTrattamenti = preview ? trattamenti.slice(0, 4) : trattamenti;
 
   return (
-    <section id="servizi" className={`w-full py-section ${preview ? 'bg-surface' : 'bg-white'}`}>
-      <div className="max-w-container">
-        <div className="text-center mb-16">
-          <p className="text-primary font-bold text-sm uppercase tracking-widest mb-2">— Fazi & Bernacchia</p>
-          <h2 className="text-4xl font-bold font-manrope text-text-main">Eccellenza e Cura per il tuo Sorriso</h2>
-          <p className="mt-4 text-text-main/60">Scopri la nostra gamma completa di trattamenti odontoiatrici.</p>
+    <section id="servizi" className={`w-full py-section border-t border-secondary-container ${preview ? "bg-surface" : "bg-white"}`}>
+      <div className="max-w-[1200px] mx-auto px-6">
+
+        <div className="mb-10">
+          <p className="text-primary font-semibold text-xs uppercase tracking-widest mb-2">Trattamenti</p>
+          <h2 className="text-3xl font-bold font-manrope text-text-main">I Nostri Servizi</h2>
+          <p className="mt-2 text-sm text-text-main/60">Soluzioni odontoiatriche per ogni esigenza, in entrambe le sedi.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {displayTrattamenti.map((t, i) => (
-            <div key={i} className="p-8 rounded-xl border border-secondary-container bg-surface-bright hover-scale shadow-sm">
-              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-primary shadow-sm mb-6">
+            <div key={i} className="p-5 rounded-lg border border-secondary-container bg-white">
+              <div className="w-9 h-9 bg-primary/10 rounded flex items-center justify-center text-primary mb-4">
                 {t.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3">{t.title}</h3>
-              <p className="text-sm text-text-main/70 leading-relaxed">{t.desc}</p>
+              <h3 className="text-sm font-bold text-text-main mb-1.5">{t.title}</h3>
+              <p className="text-xs text-text-main/60 leading-relaxed">{t.desc}</p>
             </div>
           ))}
         </div>
 
         {preview ? (
-          <div className="mt-12 text-center">
-            <Link href="/servizi" className="inline-flex items-center gap-2 text-primary font-bold hover:underline transition-all">
-              Vedi tutti i servizi <ArrowRight size={18} />
+          <div className="mt-8">
+            <Link href="/servizi" className="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:underline">
+              Vedi tutti i servizi <ArrowRight size={15} />
             </Link>
           </div>
         ) : (
-          <div className="mt-20 bg-primary rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative">
-            {/* Banner finale compresso (come da screen) */}
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-white mb-2">Il tuo percorso inizia qui.</h3>
-              <p className="text-white/80">Prenota oggi stesso una consulenza completa con i nostri esperti.</p>
+          <div className="mt-12 p-6 bg-primary/5 rounded-lg border border-primary/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <h3 className="font-bold text-text-main mb-1">Hai bisogno di una consulenza?</h3>
+              <p className="text-sm text-text-main/60">Contattaci per fissare un appuntamento nelle sedi di Monsano o Agugliano.</p>
             </div>
-            <Link href="/contatti" className="relative z-10 bg-white text-primary px-8 py-4 rounded-lg font-bold hover-scale shadow-xl block text-center">
-              Contattaci ora
+            <Link href="/contatti" className="flex-shrink-0 bg-primary text-white px-5 py-2.5 rounded text-sm font-semibold hover:bg-primary/90 transition-colors">
+              Contattaci
             </Link>
           </div>
         )}
+
       </div>
     </section>
   );

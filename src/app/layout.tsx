@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
 
 export const metadata: Metadata = {
-  title: "Studio Dentistico Fazi e Bernacchia",
-  description: "Eccellenza odontoiatrica a Monsano",
+  title: "Studio Dentistico Fazi e Bernacchia | Monsano & Agugliano",
+  description: "Studio dentistico professionale con sedi a Monsano e Agugliano (AN). Igiene, implantologia, ortodonzia e convenzioni territoriali.",
 };
 
 export default function RootLayout({

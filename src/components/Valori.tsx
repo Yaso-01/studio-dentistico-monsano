@@ -1,60 +1,49 @@
-"use client";
-import { motion } from "framer-motion";
 import { Award, Cpu, HeartPulse } from "lucide-react";
 
 const valori = [
   {
-    icon: <Award className="text-primary" size={32} />,
+    icon: <Award className="text-primary" size={24} />,
     title: "Esperienza",
-    description: "Oltre vent'anni di pratica clinica costante, aggiornamento continuo e migliaia di sorrisi ripristinati.",
-    delay: 0.1
+    description: "Oltre vent'anni di pratica clinica, aggiornamento continuo e migliaia di sorrisi curati nelle comunità di Monsano e Agugliano.",
   },
   {
-    icon: <Cpu className="text-primary" size={32} />,
+    icon: <Cpu className="text-primary" size={24} />,
     title: "Tecnologia",
-    description: "Utilizziamo le più moderne strumentazioni diagnostiche per trattamenti minimamente invasivi e precisi.",
-    delay: 0.2
+    description: "Strumentazioni diagnostiche di ultima generazione per trattamenti precisi, minimamente invasivi e confortevoli.",
   },
   {
-    icon: <HeartPulse className="text-primary" size={32} />,
-    title: "Empatia",
-    description: "Ascoltiamo ogni paziente con attenzione, costruendo un percorso terapeutico personalizzato e sereno.",
-    delay: 0.3
-  }
+    icon: <HeartPulse className="text-primary" size={24} />,
+    title: "Ascolto",
+    description: "Ogni paziente è accolto con attenzione. Costruiamo insieme un percorso terapeutico chiaro, condiviso e personalizzato.",
+  },
 ];
 
 export default function Valori() {
   return (
-    <section className="w-full bg-white py-section">
+    <section className="w-full bg-white py-section border-b border-secondary-container">
       <div className="max-w-[1200px] mx-auto px-6">
-        
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-manrope text-text-main">
-            I Nostri Valori
-          </h2>
-          <div className="w-20 h-1 bg-primary/20 mx-auto mt-4 rounded-full" />
+
+        <div className="mb-10">
+          <p className="text-primary font-semibold text-xs uppercase tracking-widest mb-2">Il Nostro Approccio</p>
+          <h2 className="text-3xl font-bold font-manrope text-text-main">I Nostri Valori</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {valori.map((valore, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: valore.delay }}
-              className="group p-8 rounded-xl bg-surface border border-secondary-container hover-scale shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all"
+              className="p-6 rounded-lg bg-surface border border-secondary-container"
             >
-              <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-6 shadow-sm group-hover:bg-primary/10 transition-colors">
+              <div className="w-10 h-10 bg-white rounded border border-secondary-container flex items-center justify-center mb-4">
                 {valore.icon}
               </div>
-              <h3 className="text-xl font-bold font-manrope text-text-main mb-4">
+              <h3 className="text-base font-bold font-manrope text-text-main mb-2">
                 {valore.title}
               </h3>
-              <p className="text-text-main/70 font-inter leading-relaxed">
+              <p className="text-sm text-text-main/65 font-inter leading-relaxed">
                 {valore.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
