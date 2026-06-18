@@ -24,7 +24,7 @@ const valori = [
 
 export default function Valori() {
   return (
-    <section className="w-full bg-white py-section border-b border-secondary-container">
+    <section className="w-full bg-surface py-section border-b border-secondary-container">
       <div className="max-w-[1200px] mx-auto px-6">
 
         <FadeUp>
@@ -37,8 +37,8 @@ export default function Valori() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {valori.map(({ Icon, title, description }, index) => (
             <FadeUp key={index} delay={index * 0.1}>
-              <div className="group p-7 rounded-xl bg-surface border border-secondary-container hover:bg-white hover:shadow-lg hover:shadow-text-main/5 hover:border-primary/20 transition-all duration-300">
-                <div className="w-11 h-11 bg-white rounded-lg border border-secondary-container flex items-center justify-center mb-5 transition-all duration-200 group-hover:bg-primary/5 group-hover:border-primary/20">
+              <div className="group p-7 rounded-xl bg-white border border-secondary-container hover:bg-surface hover:shadow-lg hover:shadow-text-main/5 hover:border-primary/20 transition-all duration-300">
+                <div className="w-11 h-11 bg-surface rounded-lg border border-secondary-container flex items-center justify-center mb-5 transition-all duration-200 group-hover:bg-primary/5 group-hover:border-primary/20">
                   <Icon className="text-primary" size={22} />
                 </div>
                 <h3 className="text-base font-bold font-manrope text-text-main mb-2">{title}</h3>

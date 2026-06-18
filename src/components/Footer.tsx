@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
+import ManageCookiesButton from "@/components/ManageCookiesButton";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -136,8 +137,9 @@ export default function Footer() {
             © 2026 Studio Dentistico Fazi &amp; Bernacchia — Monsano &amp; Agugliano (AN). Tutti i diritti riservati.
           </p>
           <div className="flex gap-5 text-[11px] text-white/30">
-            <Link href="#" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white/60 transition-colors">Cookie Policy</Link>
+            <Link href="/privacy-policy" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
+            <Link href="/cookie-policy" className="hover:text-white/60 transition-colors">Cookie Policy</Link>
+            <ManageCookiesButton />
           </div>
         </div>
 

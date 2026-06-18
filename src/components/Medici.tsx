@@ -53,7 +53,7 @@ const staff = [
 
 export default function Medici({ preview = false }: { preview?: boolean }) {
   return (
-    <section id="chi-siamo" className={`w-full py-section ${preview ? "bg-surface-warm" : "bg-surface"}`}>
+    <section id="chi-siamo" className={`w-full py-section ${preview ? "bg-surface-warm" : "bg-white"}`}>
       <div className="max-w-[1200px] mx-auto px-6">
 
         <FadeUp>
@@ -69,7 +69,7 @@ export default function Medici({ preview = false }: { preview?: boolean }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
           {medici.map((medico, index) => (
             <FadeUp key={index} delay={index * 0.1}>
-              <div className="group bg-white rounded-2xl border border-secondary-container p-7 flex flex-col gap-5 hover:shadow-lg hover:shadow-text-main/5 transition-all duration-300">
+              <div className="group bg-surface rounded-2xl border border-secondary-container p-7 flex flex-col gap-5 hover:shadow-lg hover:shadow-text-main/5 transition-all duration-300">
 
                 {/* Foto + info header */}
                 <div className="flex items-center gap-5">
@@ -135,7 +135,7 @@ export default function Medici({ preview = false }: { preview?: boolean }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {staff.map((persona, index) => (
                 <FadeUp key={index} delay={index * 0.07}>
-                  <div className="flex gap-4 p-5 bg-white rounded-xl border border-secondary-container hover:shadow-md hover:shadow-text-main/5 transition-all duration-300">
+                  <div className="flex gap-4 p-5 bg-surface rounded-xl border border-secondary-container hover:shadow-md hover:shadow-text-main/5 transition-all duration-300">
                     <div className="flex-shrink-0 w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">
                       {persona.nome[0]}
                     </div>

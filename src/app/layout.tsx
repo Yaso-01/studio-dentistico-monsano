@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import WhatsAppFAB from "@/components/WhatsAppFAB";
+import CookieBanner from "@/components/CookieBanner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
@@ -21,6 +23,8 @@ export default function RootLayout({
       <body className={`${inter.variable} ${manrope.variable} antialiased`}>
         <Navbar />
         <main>{children}</main>
+        <WhatsAppFAB />
+        <CookieBanner />
       </body>
     </html>
   );
