@@ -32,7 +32,7 @@ export default function Hero() {
             style={{ animationDelay: "160ms" }}
           >
             Due sedi al servizio delle comunità locali. Un approccio fondato
-            sull&apos;ascolto, la prevenzione e la qualità clinica — da oltre
+            sull&apos;ascolto, la prevenzione e la qualità clinica da oltre
             vent&apos;anni.
           </p>
 
@@ -63,8 +63,6 @@ export default function Hero() {
             <span>Due sedi operative</span>
             <span className="text-secondary-container">·</span>
             <span>Convenzioni territoriali</span>
-            <span className="text-secondary-container">·</span>
-            <span>Tecnologia digitale</span>
           </div>
         </div>
 
