@@ -1,7 +1,14 @@
-import { Award, Cpu, HeartPulse } from "lucide-react";
+import { Award, HeartHandshake, Smile, CalendarClock } from "lucide-react";
 import FadeUp from "@/components/motion/FadeUp";
 
 const valori = [
+  {
+    Icon: HeartHandshake,
+    title: "Attenzione al paziente",
+    // TODO: testo in bozza, da far approvare al cliente
+    description:
+      "Ogni persona viene ascoltata e seguita con cura, in un percorso costruito sulle sue esigenze.",
+  },
   {
     Icon: Award,
     title: "Esperienza",
@@ -9,16 +16,18 @@ const valori = [
       "Oltre vent'anni di pratica clinica, aggiornamento continuo e migliaia di sorrisi curati nelle comunità di Monsano e Agugliano.",
   },
   {
-    Icon: Cpu,
-    title: "Tecnologia",
+    Icon: Smile,
+    title: "Cortesia",
+    // TODO: testo in bozza, da far approvare al cliente
     description:
-      "Strumentazioni diagnostiche di ultima generazione per trattamenti precisi, minimamente invasivi e confortevoli.",
+      "Un ambiente accogliente, dove ci si sente a proprio agio dal primo momento.",
   },
   {
-    Icon: HeartPulse,
-    title: "Ascolto",
+    Icon: CalendarClock,
+    title: "Disponibilità",
+    // TODO: testo in bozza, da far approvare al cliente
     description:
-      "Ogni paziente è accolto con attenzione. Costruiamo insieme un percorso terapeutico chiaro, condiviso e personalizzato.",
+      "Massima flessibilità negli orari e nella comunicazione, per essere vicini quando serve.",
   },
 ];
 
@@ -34,7 +43,7 @@ export default function Valori() {
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {valori.map(({ Icon, title, description }, index) => (
             <FadeUp key={index} delay={index * 0.1}>
               <div className="group p-7 rounded-xl bg-white border border-secondary-container hover:bg-surface hover:shadow-lg hover:shadow-text-main/5 hover:border-primary/20 transition-all duration-300">

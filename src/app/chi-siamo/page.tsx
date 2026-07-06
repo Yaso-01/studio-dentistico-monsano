@@ -11,10 +11,28 @@ export default function ChiSiamoPage() {
         <div className="max-w-[1200px] mx-auto px-6 py-20 md:py-28">
           <FadeUp>
             <div className="space-y-6">
-              <p className="text-white/50 font-semibold text-[11px] uppercase tracking-[0.15em] flex items-center gap-2"><span className="w-5 h-px bg-white/40" />Lo Studio</p>
               <h1 className="text-4xl md:text-5xl font-bold font-manrope text-white tracking-tight">Chi Siamo</h1>
               <p className="text-white/65 max-w-xl leading-relaxed">
                 Due sedi, un&apos;unica filosofia di cura. Conoscete il team che ogni giorno si prende cura dei pazienti di Monsano e Agugliano.
+              </p>
+            </div>
+          </FadeUp>
+        </div>
+      </div>
+
+      {/* Intro */}
+      <div className="w-full bg-white py-section border-b border-secondary-container">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <FadeUp>
+            <div className="max-w-xl space-y-4">
+              <p className="text-primary font-semibold text-[11px] uppercase tracking-[0.15em]">
+                Il Tuo Partner per la Salute Orale
+              </p>
+              <p className="text-text-main/65 leading-relaxed">
+                Lo studio Fazi-Bernacchia vanta un&apos;esperienza ventennale nel settore odontoiatrico.
+              </p>
+              <p className="text-text-main/65 leading-relaxed">
+                Nel corso degli anni abbiamo sviluppato rapporti di familiarità con i pazienti, per questo da noi non sarete semplici clienti o casi clinici ma persone a cui dedichiamo ascolto, attenzione e massima cura.
               </p>
             </div>
           </FadeUp>

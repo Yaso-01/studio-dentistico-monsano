@@ -5,49 +5,77 @@ import FadeUp from "@/components/motion/FadeUp";
 
 const medici = [
   {
-    nome: "Dr. Riccardo Fazi",
-    specializzazione: "Chirurgia Orale & Implantologia",
-    bio: "Specializzato in chirurgia orale e implantologia avanzata, coordina l'area clinica con un approccio orientato alla precisione e alla riabilitazione estetica complessa.",
+    nome: "Dott. Francesco Fazi",
+    // TODO: testo in bozza, da far approvare al cliente
+    specializzazione: "Chirurgia Implantare & Parodontologia",
+    // TODO: testo in bozza, da far approvare al cliente
+    bio: "Laureato nel 1999 con il massimo dei voti, si è specializzato in parodontologia e chirurgia implantare. Socio ordinario SIDP, svolge attività di chirurgia implantare e protesi anche come consulente presso altri studi.",
     titoli: [
-      "Laurea con lode in Odontoiatria e Protesi Dentaria",
-      "Master in Implantologia Osteointegrata",
-      "Aggiornamento continuo in tecniche digitali 3D",
+      "Laurea con lode (1999) — Università Politecnica delle Marche",
+      "Corso di perfezionamento in endodonzia (2000)",
+      "Socio ordinario SIDP",
     ],
     immagine: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80",
   },
   {
-    nome: "Dr.ssa Laura Bernacchia",
-    specializzazione: "Ortodonzia & Odontoiatria Pediatrica",
-    bio: "Si dedica all'ortodonzia invisibile e alla cura dei pazienti più giovani. Il suo approccio attento e comunicativo crea un ambiente sereno per ogni visita.",
+    nome: "Dott.ssa Ilaria Bernacchia Ricciotti",
+    // TODO: testo in bozza, da far approvare al cliente
+    specializzazione: "Endodonzia & Protesi Fissa",
+    // TODO: testo in bozza, da far approvare al cliente
+    bio: "Laureata nel 2002 con il massimo dei voti, ha approfondito endodonzia, conservativa e protesi fissa, perfezionandosi con i master dei Dottori Fradeani e Loi. Dal 2003 al 2010 è stata medico volontario in Odontostomatologia all'Ospedale Regionale di Torrette.",
     titoli: [
-      "Specializzazione in Ortodonzia",
-      "Certificazione Invisalign Platinum Provider",
-      "Esperta in odontoiatria materno-infantile",
+      "Laurea con lode (2002) — Università Politecnica delle Marche",
+      "Volontariato in Odontostomatologia, Ospedale di Torrette (2003–2010)",
+      "Master di protesi fissa (Dott. Fradeani, 2011) e tecnica BOPT (Prof. Loi, 2018)",
     ],
     immagine: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    nome: "Dott. Alessio Calamante",
+    // TODO: testo in bozza, da far approvare al cliente
+    specializzazione: "Ortodonzia & Invisalign",
+    // TODO: testo in bozza, da far approvare al cliente
+    bio: "Laureato nel 2007, si dedica all'ortodonzia con un percorso di perfezionamento tra Firenze e Bologna. È socio ordinario SIDO e provider certificato Platinum per Invisalign.",
+    titoli: [
+      "Laureato nel 2007 — Università Politecnica delle Marche",
+      "Corsi di perfezionamento in ortodonzia (Dott. Fortini, Firenze; Dott. Ratti, Bologna)",
+      "Socio ordinario SIDO — Provider certificato Platinum Invisalign",
+    ],
+    immagine: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    nome: "Dott.ssa Stefania Incani",
+    // TODO: testo in bozza, da far approvare al cliente
+    specializzazione: "Ortodonzia Funzionale & Invisibile",
+    // TODO: testo in bozza, da far approvare al cliente
+    bio: "Laureata con lode nel 2000, esercita da oltre 25 anni come ortodontista esclusivista. Si dedica a tutte le principali discipline ortodontiche, dall'ortodonzia funzionale e fissa agli allineatori trasparenti.",
+    titoli: [
+      "Laureata con lode (19 luglio 2000) — Università Politecnica delle Marche",
+      "Oltre 25 anni come ortodontista esclusivista",
+      "Ortodonzia funzionale, fissa, allineatori trasparenti, prechirurgica e preprotesica",
+    ],
+    immagine: "/images/team/incani-stefania.jpg",
   },
 ];
 
 const staff = [
   {
-    nome: "Giulia M.",
+    nome: "Alessia Papili",
+    ruolo: "ASO",
+    // TODO: testo in bozza, da far approvare al cliente
+    desc: "Supporto clinico e organizzativo durante le procedure odontoiatriche.",
+  },
+  {
+    nome: "Elisa Pacetti",
     ruolo: "Igienista Dentale",
-    desc: "Responsabile dei protocolli di igiene professionale e prevenzione.",
+    // TODO: testo in bozza, da far approvare al cliente
+    desc: "Cura dell'igiene orale e della prevenzione professionale dei pazienti.",
   },
   {
-    nome: "Sara T.",
-    ruolo: "Assistente alla Poltrona",
-    desc: "Supporto clinico durante le procedure, con attenzione al comfort del paziente.",
-  },
-  {
-    nome: "Marco B.",
-    ruolo: "Assistente alla Poltrona",
-    desc: "Gestione dello strumentario e assistenza nelle procedure implantologiche.",
-  },
-  {
-    nome: "Elena R.",
-    ruolo: "Segreteria e Accoglienza",
-    desc: "Coordinamento delle prenotazioni e prima accoglienza in entrambe le sedi.",
+    nome: "Agnese Bordoni",
+    ruolo: "Igienista Dentale",
+    // TODO: testo in bozza, da far approvare al cliente
+    desc: "Cura dell'igiene orale e della prevenzione professionale dei pazienti.",
   },
 ];
 
@@ -65,9 +93,9 @@ export default function Medici({ preview = false }: { preview?: boolean }) {
           </div>
         </FadeUp>
 
-        {/* Cards medici */}
+        {/* Cards medici — in preview mostra solo i due fondatori */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
-          {medici.map((medico, index) => (
+          {(preview ? medici.slice(0, 2) : medici).map((medico, index) => (
             <FadeUp key={index} delay={index * 0.1}>
               <div className="group bg-surface rounded-2xl border border-secondary-container p-7 flex flex-col gap-5 hover:shadow-lg hover:shadow-text-main/5 transition-all duration-300">
 
@@ -132,7 +160,7 @@ export default function Medici({ preview = false }: { preview?: boolean }) {
               </div>
             </FadeUp>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {staff.map((persona, index) => (
                 <FadeUp key={index} delay={index * 0.07}>
                   <div className="flex gap-4 p-5 bg-surface rounded-xl border border-secondary-container hover:shadow-md hover:shadow-text-main/5 transition-all duration-300">
@@ -148,6 +176,15 @@ export default function Medici({ preview = false }: { preview?: boolean }) {
                 </FadeUp>
               ))}
             </div>
+
+            {/* Nota corsi BLS-D */}
+            <FadeUp delay={0.15}>
+              <div className="mt-8 p-4 rounded-lg border border-secondary-container bg-surface">
+                <p className="text-xs text-text-main/55 leading-relaxed italic">
+                  Con frequenza biennale tutti i membri dello staff svolgono, inoltre, il corso BLS-D per la gestione delle emergenze e l&apos;uso del defibrillatore.
+                </p>
+              </div>
+            </FadeUp>
           </div>
         )}
 
