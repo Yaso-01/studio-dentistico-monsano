@@ -66,45 +66,20 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Colonna immagini — dual sede layout */}
+        {/* Colonna immagine — foto reale del team */}
         <div
-          className="animate-reveal w-full lg:w-[48%] flex-shrink-0 grid grid-cols-2 gap-3 items-end"
+          className="animate-reveal w-full lg:w-[42%] flex-shrink-0"
           style={{ animationDelay: "200ms" }}
         >
-          {/* Immagine Monsano — più alta */}
-          <div className="flex flex-col gap-2">
-            <div className="group relative w-full aspect-[3/4] rounded-2xl overflow-hidden bg-secondary-container shadow-lg shadow-text-main/8">
-              <Image
-                src="/images/foto-studio-dentistico.png"
-                alt="Sede di Monsano — Studio Dentistico Fazi e Bernacchia"
-                fill
-                priority
-                sizes="(max-width: 768px) 45vw, 22vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-text-main/30 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-3 right-3">
-                <p className="text-white text-xs font-semibold uppercase tracking-widest">Monsano</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Immagine Agugliano — più bassa, offset visivo */}
-          <div className="flex flex-col gap-2 mt-8">
-            <div className="group relative w-full aspect-[3/4] rounded-2xl overflow-hidden bg-secondary-container shadow-lg shadow-text-main/8">
-              <Image
-                src="/images/filler_waiting_room_1777946017951.png"
-                alt="Sede di Agugliano — Studio Dentistico Fazi e Bernacchia"
-                fill
-                priority
-                sizes="(max-width: 768px) 45vw, 22vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-text-main/30 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-3 right-3">
-                <p className="text-white text-xs font-semibold uppercase tracking-widest">Agugliano</p>
-              </div>
-            </div>
+          <div className="group relative w-full aspect-[3/4] rounded-2xl overflow-hidden bg-secondary-container shadow-lg shadow-text-main/8">
+            <Image
+              src="/images/home-hero-dottori.jpg"
+              alt="Dott. Francesco Fazi e Dott.ssa Ilaria Bernacchia Ricciotti — Studio Dentistico Fazi e Bernacchia"
+              fill
+              priority
+              sizes="(max-width: 768px) 90vw, 40vw"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            />
           </div>
         </div>
 

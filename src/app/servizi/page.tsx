@@ -1,4 +1,5 @@
 import ServiceSection from "@/components/ServiceSection";
+import AltriServizi from "@/components/AltriServizi";
 import Footer from "@/components/Footer";
 
 export default function ServiziPage() {
@@ -20,7 +21,7 @@ export default function ServiziPage() {
 
       <ServiceSection
         title="Igiene Dentale"
-        description="La prevenzione è la base di un sorriso sano e duraturo. Il nostro team utilizza protocolli minimamente invasivi e tecnologie GBT (Guided Biofilm Therapy) per una pulizia profonda, indolore e confortevole."
+        description="La prevenzione è la base di un sorriso sano e duraturo. Procedura in cui si rimuove placca e tartaro, prevenendo parodontiti e gengiviti."
         benefits={[
           "Prevenzione efficace di carie e gengiviti",
           "Rimozione sicura di tartaro e macchie superficiali",
@@ -29,35 +30,78 @@ export default function ServiziPage() {
         ]}
         process={[
           { step: "Rilevazione Placca", desc: "Localizzatore cromatico per evidenziare il biofilm." },
-          { step: "Rimozione Biofilm", desc: "Pulizia delicata con polveri a base di eritritolo." },
-          { step: "Ablazione Tartaro", desc: "Tecnologia a ultrasuoni intelligente e indolore." },
-          { step: "Lucidatura e Fluoro", desc: "Applicazione finale per fortificare lo smalto." },
+          { step: "Ablazione Tartaro", desc: "Tecnologia a ultrasuoni o air flow." },
+          { step: "Lucidatura", desc: "Rimozione delle macchie tramite pasta abrasiva." },
         ]}
         heroImage="/images/hero_igiene_1777945951088.png"
       />
 
       <ServiceSection
-        title="Implantologia Avanzata"
-        description="Restituiamo funzionalità ed estetica con impianti in titanio biocompatibile pianificati in 3D per la massima precisione, con procedure minimamente invasive e tempi di recupero rapidi."
+        title="Chirurgia Implantare"
+        description="Restituiamo funzionalità ed estetica tramite l'inserimento di viti in titanio nell'osso mascellare o mandibolare per sostituire le radici dei denti mancanti."
         benefits={[
           "Ripristino completo della capacità masticatoria",
           "Risultati estetici naturali e armonici",
           "Preservazione dell'osso mascellare e dei denti adiacenti",
-          "Protesi fisse garantite e di lunga durata",
         ]}
         process={[
-          { step: "Diagnosi 3D", desc: "Scansione CBCT per mappare l'anatomia ossea." },
-          { step: "Pianificazione", desc: "Progettazione virtuale dell'intervento." },
-          { step: "Chirurgia Guidata", desc: "Inserimento con mascherina di precisione." },
-          { step: "Carico Protesico", desc: "Corona definitiva in ceramica integrata." },
+          { step: "Pianificazione e Progettazione dell'Intervento", desc: "Dopo valutazione con modelli e rx 2D e 3D." },
+          { step: "Chirurgia", desc: "Inserimento della o delle viti implantari nell'osso." },
+          { step: "Carico Protesico", desc: "Inserimento di corona o protesi definitiva sopra gli impianti." },
         ]}
-        heroImage="/images/hero_implantologia_1777945968659.png"
+        heroImage="/images/servizi-intervento.jpg"
         reverse={true}
       />
 
       <ServiceSection
-        title="Ortodonzia e Allineatori"
-        description="Correggiamo le malocclusioni in modo discreto. Siamo Provider certificati per l'ortodonzia invisibile, con percorsi terapeutici su misura per adulti e bambini."
+        title="Parodontologia"
+        description="Si occupa della salute dei tessuti di sostegno dei denti: gengive, osso alveolare, legamento parodontale e cemento radicolare."
+        benefits={[
+          // TODO: testo in bozza, da far approvare al cliente
+          "Diagnosi precoce di gengiviti e parodontiti",
+          // TODO: testo in bozza, da far approvare al cliente
+          "Riduzione di sanguinamento e infiammazione gengivale",
+          // TODO: testo in bozza, da far approvare al cliente
+          "Prevenzione della perdita dei denti",
+          // TODO: testo in bozza, da far approvare al cliente
+          "Salute gengivale nel tempo",
+        ]}
+        process={[
+          { step: "Visita Parodontale", desc: "Valutazione clinica e sondaggio parodontale." },
+          { step: "Terapia Causale", desc: "Igiene profonda e rimozione del tartaro sottogengivale." },
+          { step: "Terapia Chirurgica", desc: "Nei casi più avanzati, quando necessaria." },
+          { step: "Mantenimento", desc: "Richiami periodici per la salute gengivale nel tempo." },
+        ]}
+        // TODO: sostituire con foto reale del servizio Parodontologia
+        heroImage="/images/filler_clinic_detail_1777946032605.png"
+      />
+
+      <ServiceSection
+        title="Ortodonzia Tradizionale"
+        description="Previene e corregge le malocclusioni e i disallineamenti dentali. Il suo scopo è estetico e ripristina la corretta masticazione, respirazione e fonazione."
+        benefits={[
+          // TODO: testo in bozza, da far approvare al cliente
+          "Corregge malocclusioni anche complesse",
+          // TODO: testo in bozza, da far approvare al cliente
+          "Adatta a bambini e adulti",
+          // TODO: testo in bozza, da far approvare al cliente
+          "Ripristina una corretta masticazione e respirazione",
+          // TODO: testo in bozza, da far approvare al cliente
+          "Risultati stabili nel tempo",
+        ]}
+        process={[
+          { step: "Diagnosi e Piano di Trattamento", desc: "Tramite modelli e tracciati cefalometrici." },
+          { step: "Ortodonzia Funzionale", desc: "Applicazione di apparecchi mobili e fissi per correggere la crescita ossea." },
+          { step: "Ortodonzia Fissa", desc: "Per il corretto allineamento dei denti." },
+          // TODO: testo in bozza, da far approvare al cliente
+          { step: "Monitoraggio", desc: "Controlli periodici per verificare i progressi del trattamento." },
+        ]}
+        heroImage="/images/servizi-diagnosi.jpg"
+      />
+
+      <ServiceSection
+        title="Ortodonzia Invisibile"
+        description="Trattamento per allineare i denti avvalendosi di allineatori (mascherine) trasparenti, rimovibili e realizzate su misura."
         benefits={[
           "Trattamenti praticamente invisibili",
           "Nessuna restrizione alimentare",
@@ -91,6 +135,8 @@ export default function ServiziPage() {
         heroImage="/images/hero_sbiancamento_1777945997300.png"
         reverse={true}
       />
+
+      <AltriServizi />
 
       <Footer />
     </div>

@@ -1,0 +1,74 @@
+import Image from "next/image";
+import FadeUp from "@/components/motion/FadeUp";
+
+const altriServizi = [
+  {
+    title: "Endodonzia",
+    desc: "Rimozione della polpa (nervi e vasi all'interno del dente) infetta e successiva sigillatura dei canali.",
+    // TODO: aggiungere foto reale
+    image: "/images/filler_clinic_detail_1777946032605.png",
+  },
+  {
+    title: "Conservativa",
+    desc: "Rimozione del tessuto dentale danneggiato da carie, ricostruendo forma e funzione.",
+    // TODO: aggiungere foto reale
+    image: "/images/filler_clinic_detail_1777946032605.png",
+  },
+  {
+    title: "Protesi Dentale",
+    desc: "Progettazione e applicazione di dispositivi medici su misura (protesi fissa su denti e impianti, protesi mobile, scheletrata, faccette in ceramica) per ripristinare le funzioni masticatorie, fonetiche ed estetiche.",
+    // TODO: aggiungere foto reale
+    image: "/images/filler_clinic_detail_1777946032605.png",
+  },
+  {
+    title: "Pedodonzia",
+    desc: "Prevenzione (igiene e sigillatura) e cura dei denti da latte.",
+    // TODO: aggiungere foto reale
+    image: "/images/filler_clinic_detail_1777946032605.png",
+  },
+];
+
+export default function AltriServizi() {
+  return (
+    <section className="w-full py-section bg-surface">
+      <div className="max-w-[1200px] mx-auto px-6">
+
+        <FadeUp>
+          <div className="mb-10">
+            <p className="text-primary font-semibold text-[11px] uppercase tracking-[0.15em] mb-2">
+              {/* TODO: testo in bozza, da far approvare al cliente */}
+              Ulteriori Trattamenti
+            </p>
+            <h2 className="text-2xl font-bold font-manrope text-text-main tracking-tight">
+              {/* TODO: testo in bozza, da far approvare al cliente */}
+              Altri Servizi
+            </h2>
+          </div>
+        </FadeUp>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {altriServizi.map((servizio, index) => (
+            <FadeUp key={index} delay={index * 0.08}>
+              <div className="group flex gap-4 p-5 rounded-xl bg-white border border-secondary-container hover:shadow-md hover:shadow-text-main/5 transition-all duration-300 h-full">
+                <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden">
+                  <Image
+                    src={servizio.image}
+                    alt={servizio.title}
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-bold text-text-main text-sm mb-1.5">{servizio.title}</h3>
+                  <p className="text-xs text-text-main/55 leading-relaxed">{servizio.desc}</p>
+                </div>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, User } from "lucide-react";
 import FadeUp from "@/components/motion/FadeUp";
 
 const medici = [
@@ -15,7 +15,7 @@ const medici = [
       "Corso di perfezionamento in endodonzia (2000)",
       "Socio ordinario SIDP",
     ],
-    immagine: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80",
+    immagine: "/images/team/fazi-francesco.jpg",
   },
   {
     nome: "Dott.ssa Ilaria Bernacchia Ricciotti",
@@ -28,7 +28,7 @@ const medici = [
       "Volontariato in Odontostomatologia, Ospedale di Torrette (2003–2010)",
       "Master di protesi fissa (Dott. Fradeani, 2011) e tecnica BOPT (Prof. Loi, 2018)",
     ],
-    immagine: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=80",
+    immagine: "/images/team/bernacchia-ilaria.jpg",
   },
   {
     nome: "Dott. Alessio Calamante",
@@ -41,7 +41,8 @@ const medici = [
       "Corsi di perfezionamento in ortodonzia (Dott. Fortini, Firenze; Dott. Ratti, Bologna)",
       "Socio ordinario SIDO — Provider certificato Platinum Invisalign",
     ],
-    immagine: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80",
+    // TODO: aggiungere foto reale quando disponibile
+    immagine: null,
   },
   {
     nome: "Dott.ssa Stefania Incani",
@@ -64,18 +65,21 @@ const staff = [
     ruolo: "ASO",
     // TODO: testo in bozza, da far approvare al cliente
     desc: "Supporto clinico e organizzativo durante le procedure odontoiatriche.",
+    // TODO: aggiungere foto reale quando disponibile
+    foto: null,
   },
   {
     nome: "Elisa Pacetti",
     ruolo: "Igienista Dentale",
-    // TODO: testo in bozza, da far approvare al cliente
-    desc: "Cura dell'igiene orale e della prevenzione professionale dei pazienti.",
+    desc: "Mi sono laureata con lode presso l'Università Politecnica delle Marche nel 2015. Ho conseguito vari corsi di approfondimento sullo sbiancamento dentale e resine infiltranti. Inoltre, ho ottenuto la certificazione per il protocollo GBT (Guided Biofilm Therapy), offrendo ai miei pazienti un metodo innovativo e delicato per la loro salute orale.",
+    foto: "/images/team/pacetti-elisa.jpg",
   },
   {
     nome: "Agnese Bordoni",
     ruolo: "Igienista Dentale",
-    // TODO: testo in bozza, da far approvare al cliente
-    desc: "Cura dell'igiene orale e della prevenzione professionale dei pazienti.",
+    desc: "Sono Agnese Bordoni, igienista dentale laureata nel 2015 presso l'Università Politecnica delle Marche. Credo che un sorriso sano nasca dalla prevenzione, dall'ascolto e da un rapporto di fiducia con ogni paziente.",
+    // TODO: aggiungere foto reale quando disponibile
+    foto: null,
   },
 ];
 
@@ -102,13 +106,19 @@ export default function Medici({ preview = false }: { preview?: boolean }) {
                 {/* Foto + info header */}
                 <div className="flex items-center gap-5">
                   <div className="relative w-20 h-20 flex-shrink-0 rounded-full overflow-hidden ring-4 ring-white shadow-md">
-                    <Image
-                      src={medico.immagine}
-                      alt={medico.nome}
-                      fill
-                      sizes="80px"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    />
+                    {medico.immagine ? (
+                      <Image
+                        src={medico.immagine}
+                        alt={medico.nome}
+                        fill
+                        sizes="80px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-primary/10 flex items-center justify-center">
+                        <User className="text-primary/50" size={32} />
+                      </div>
+                    )}
                   </div>
                   <div>
                     <h3 className="font-bold font-manrope text-text-main text-lg leading-snug">{medico.nome}</h3>
@@ -163,15 +173,29 @@ export default function Medici({ preview = false }: { preview?: boolean }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {staff.map((persona, index) => (
                 <FadeUp key={index} delay={index * 0.07}>
-                  <div className="flex gap-4 p-5 bg-surface rounded-xl border border-secondary-container hover:shadow-md hover:shadow-text-main/5 transition-all duration-300">
-                    <div className="flex-shrink-0 w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">
-                      {persona.nome[0]}
+                  <div className="flex flex-col gap-4 p-5 bg-surface rounded-xl border border-secondary-container hover:shadow-md hover:shadow-text-main/5 transition-all duration-300">
+                    <div className="flex items-center gap-4">
+                      <div className="relative w-20 h-20 flex-shrink-0 rounded-full overflow-hidden ring-4 ring-white shadow-md">
+                        {persona.foto ? (
+                          <Image
+                            src={persona.foto}
+                            alt={persona.nome}
+                            fill
+                            sizes="80px"
+                            className="object-cover"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-primary/10 flex items-center justify-center">
+                            <User className="text-primary/50" size={32} />
+                          </div>
+                        )}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-text-main text-sm">{persona.nome}</h4>
+                        <p className="text-primary text-[10px] font-semibold uppercase tracking-wider">{persona.ruolo}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-text-main text-sm">{persona.nome}</h4>
-                      <p className="text-primary text-[10px] font-semibold uppercase tracking-wider mb-1">{persona.ruolo}</p>
-                      <p className="text-xs text-text-main/55 leading-relaxed">{persona.desc}</p>
-                    </div>
+                    <p className="text-xs text-text-main/55 leading-relaxed">{persona.desc}</p>
                   </div>
                 </FadeUp>
               ))}
