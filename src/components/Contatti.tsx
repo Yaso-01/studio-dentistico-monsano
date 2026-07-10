@@ -1,31 +1,28 @@
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Smartphone, Mail, Clock } from "lucide-react";
 import FadeUp from "@/components/motion/FadeUp";
-import { whatsappUrl } from "@/lib/contact";
+import { whatsappUrl, STUDIO_PHONE, STUDIO_MOBILE, STUDIO_EMAIL } from "@/lib/contact";
 import ContactForm from "@/components/ContactForm";
+import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 
 const sedi = [
   {
     nome: "Sede di Monsano",
-    indirizzo: "Via Roma 123",
+    indirizzo: "Largo Due Querce 85/B",
     cap: "60030 Monsano (AN)",
-    telefono: "+39 0731 123456",
-    email: "monsano@fazibernacchia.it",
     orari: [
-      { giorni: "Lun – Ven", ore: "09:00 – 19:30" },
-      { giorni: "Sabato", ore: "09:00 – 13:00" },
-      { giorni: "Domenica", ore: "Chiuso" },
+      { giorni: "Lunedì", ore: "9:00–12:00 · 15:00–19:00" },
+      { giorni: "Martedì", ore: "15:00–19:00 (2 al mese)" },
+      { giorni: "Giovedì", ore: "15:00–19:00" },
     ],
   },
   {
     nome: "Sede di Agugliano",
-    indirizzo: "Via Verdi 45",
+    indirizzo: "Via Sebastiano Petrelli 2/A",
     cap: "60020 Agugliano (AN)",
-    telefono: "+39 071 987654",
-    email: "agugliano@fazibernacchia.it",
     orari: [
-      { giorni: "Lun – Ven", ore: "08:30 – 18:30" },
-      { giorni: "Sabato", ore: "09:00 – 12:30" },
-      { giorni: "Domenica", ore: "Chiuso" },
+      { giorni: "Martedì", ore: "15:00–19:00 (2 al mese)" },
+      { giorni: "Mercoledì", ore: "15:00–19:00" },
+      { giorni: "Venerdì", ore: "9:00–12:00 · 15:00–19:00" },
     ],
   },
 ];
@@ -58,10 +55,20 @@ export default function Contatti() {
                   <div className="flex items-center gap-3">
                     <Phone size={15} className="text-primary shrink-0" />
                     <a
-                      href={`tel:${sede.telefono.replace(/\s/g, "")}`}
+                      href={`tel:${STUDIO_PHONE.replace(/\s/g, "")}`}
                       className="text-sm text-text-main/70 hover:text-primary transition-colors"
                     >
-                      {sede.telefono}
+                      Tel. {STUDIO_PHONE}
+                    </a>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <Smartphone size={15} className="text-primary shrink-0" />
+                    <a
+                      href={`tel:${STUDIO_MOBILE.replace(/\s/g, "")}`}
+                      className="text-sm text-text-main/70 hover:text-primary transition-colors"
+                    >
+                      Cell. {STUDIO_MOBILE}
                     </a>
                   </div>
 
@@ -82,10 +89,10 @@ export default function Contatti() {
                   <div className="flex items-center gap-3">
                     <Mail size={15} className="text-primary shrink-0" />
                     <a
-                      href={`mailto:${sede.email}`}
+                      href={`mailto:${STUDIO_EMAIL}`}
                       className="text-sm text-text-main/70 hover:text-primary transition-colors"
                     >
-                      {sede.email}
+                      {STUDIO_EMAIL}
                     </a>
                   </div>
 
@@ -101,13 +108,7 @@ export default function Contatti() {
                     </div>
                   </div>
 
-                  {/* Placeholder mappa */}
-                  <div className="mt-2 w-full h-28 rounded-lg bg-secondary-container/50 flex items-center justify-center border border-secondary-container">
-                    <span className="text-xs text-text-main/35 flex items-center gap-1.5">
-                      <MapPin size={13} />
-                      Visualizza su Google Maps
-                    </span>
-                  </div>
+                  <GoogleMapEmbed address={`${sede.indirizzo}, ${sede.cap}`} label={sede.nome} />
                 </div>
               </div>
             </FadeUp>

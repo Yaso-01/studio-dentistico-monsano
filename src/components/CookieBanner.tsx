@@ -23,11 +23,13 @@ export default function CookieBanner() {
 
   function accept() {
     localStorage.setItem(CONSENT_STORAGE_KEY, "accepted");
+    window.dispatchEvent(new Event("consent-changed"));
     setVisible(false);
   }
 
   function acceptNecessary() {
     localStorage.setItem(CONSENT_STORAGE_KEY, "necessary-only");
+    window.dispatchEvent(new Event("consent-changed"));
     setVisible(false);
   }
 

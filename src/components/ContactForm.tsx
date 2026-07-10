@@ -3,10 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Send } from "lucide-react";
-import { whatsappUrl, STUDIO_MOBILE } from "@/lib/contact";
-
-// TODO: inserire email studio quando fornita dal cliente
-const STUDIO_EMAIL = "";
+import { whatsappUrl, STUDIO_MOBILE, STUDIO_EMAIL } from "@/lib/contact";
 
 export default function ContactForm() {
   const [privacy, setPrivacy] = useState(false);
@@ -15,22 +12,39 @@ export default function ContactForm() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (!STUDIO_EMAIL) {
-      setSubmitted(true);
-      return;
-    }
+    const data = new FormData(e.currentTarget);
+    const nome = data.get("nome") as string;
+    const telefono = data.get("telefono") as string;
+    const email = data.get("email") as string;
+    const sede = data.get("sede") as string;
+    const messaggio = data.get("messaggio") as string;
 
-    // TODO: wire real send here
-    // Scegliere il metodo (Web3Forms / Formspree / API route) una volta disponibile STUDIO_EMAIL.
+    const subject = `Richiesta contatto dal sito — ${nome}`;
+    const body = [
+      `Nome: ${nome}`,
+      `Telefono: ${telefono || "-"}`,
+      `Email: ${email}`,
+      `Sede di preferenza: ${sede || "-"}`,
+      "",
+      "Messaggio:",
+      messaggio,
+    ].join("\n");
+
+    window.location.href = `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
   }
 
   if (submitted) {
     return (
       <div className="max-w-2xl rounded-xl border border-secondary-container bg-secondary-container/30 p-7 space-y-4">
         <div>
-          <p className="font-semibold text-text-main mb-1">Il modulo non è ancora attivo.</p>
+          <p className="font-semibold text-text-main mb-1">Si è aperto il tuo programma di posta.</p>
           <p className="text-sm text-text-main/65 leading-relaxed">
-            Per contattarci subito usa WhatsApp o il telefono.
+            Controlla il messaggio precompilato e invialo. Se non si apre automaticamente, scrivici direttamente a{" "}
+            <a href={`mailto:${STUDIO_EMAIL}`} className="text-primary underline underline-offset-2">
+              {STUDIO_EMAIL}
+            </a>{" "}
+            oppure contattaci su WhatsApp o al telefono.
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">

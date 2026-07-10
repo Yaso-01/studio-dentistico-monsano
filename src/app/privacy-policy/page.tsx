@@ -24,24 +24,17 @@ export default function PrivacyPolicyPage() {
       <section className="w-full py-section bg-surface">
         <div className="max-w-3xl mx-auto px-6">
 
-          {/* Draft notice */}
-          <div className="bg-amber-50 border border-amber-200 rounded-xl px-5 py-4 mb-12">
-            <p className="text-sm text-amber-800 leading-relaxed">
-              ⚠️ Bozza da completare con i dati dello studio e da far verificare prima della pubblicazione definitiva.
-            </p>
-          </div>
-
           <div className="space-y-10 text-sm text-text-main/80 leading-relaxed">
 
             {/* 1 */}
             <div className="space-y-3">
               <h2 className="text-base font-bold font-manrope text-text-main">1. Titolare del Trattamento</h2>
               <p>
-                <strong className="text-text-main">{"{{TITOLARE}}"}</strong><br />
-                {"{{INDIRIZZO}}"}<br />
-                {"C.F./P.IVA: {{PIVA_O_CF}}"}<br />
-                {"Email/PEC: {{EMAIL_O_PEC}}"}<br />
-                {"Telefono: {{TELEFONO}}"}
+                <strong className="text-text-main">Studio Dentistico Associato Dott. Francesco Fazi e Dott.ssa Ilaria Bernacchia Ricciotti</strong><br />
+                Via Sebastiano Petrelli 2/A, 60020 Agugliano (AN)<br />
+                P.IVA e C.F. 02297070423<br />
+                {"Email: info@studiodentisticofb.it"}<br />
+                {"Telefono: 071 908191"}
               </p>
             </div>
 
@@ -135,7 +128,7 @@ export default function PrivacyPolicyPage() {
               <p>
                 Per esercitare i propri diritti o per qualsiasi informazione relativa al trattamento dei dati personali,
                 è possibile contattare il Titolare del Trattamento scrivendo a:{" "}
-                <strong className="text-text-main">{"{{EMAIL_O_PEC}}"}</strong>.
+                <strong className="text-text-main">info@studiodentisticofb.it</strong>.
               </p>
             </div>
 

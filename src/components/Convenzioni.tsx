@@ -1,13 +1,32 @@
 import { ArrowRight, CheckCircle2, Image as ImageIcon, Building2 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import FadeUp from "@/components/motion/FadeUp";
 
-// TODO: nome reale azienda piscine da confermare (placeholder: {{NOME_AZIENDA_PISCINE}})
 const partner = [
-  { nome: "MTA — Centro Sportivo Jesi" },
-  { nome: "{{NOME_AZIENDA_PISCINE}} — Piscina di Chiaravalle" },
-  { nome: "{{NOME_AZIENDA_PISCINE}} — Piscina di Jesi" },
-  { nome: "{{NOME_AZIENDA_PISCINE}} — Piscina di Moie" },
+  {
+    nome: "MTA — Centro Sportivo, Jesi",
+    foto: "/images/mta-centro-sportivo.jpg",
+    logo: "/images/mta-logo.png",
+  },
+  {
+    nome: "Team Marche — Piscina di Chiaravalle",
+    // TODO: aggiungere foto piscina
+    foto: null,
+    logo: "/images/team-marche-logo.svg",
+  },
+  {
+    nome: "Team Marche — Piscina di Jesi",
+    // TODO: aggiungere foto piscina
+    foto: null,
+    logo: "/images/team-marche-logo.svg",
+  },
+  {
+    nome: "Team Marche — Piscina di Moie",
+    // TODO: aggiungere foto piscina
+    foto: null,
+    logo: "/images/team-marche-logo.svg",
+  },
 ];
 
 const vantaggi = [
@@ -49,15 +68,28 @@ export default function Convenzioni() {
           {partner.map((p, i) => (
             <FadeUp key={i} delay={i * 0.08}>
               <div className="rounded-xl border border-secondary-container bg-white overflow-hidden flex flex-col">
-                {/* Photo placeholder */}
+                {/* Foto */}
                 <div className="relative w-full aspect-[4/3] bg-secondary-container/50 flex items-center justify-center border-b border-secondary-container">
-                  <ImageIcon size={22} className="text-text-main/25" />
+                  {p.foto ? (
+                    <Image
+                      src={p.foto}
+                      alt={p.nome}
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="object-cover"
+                    />
+                  ) : (
+                    <ImageIcon size={22} className="text-text-main/25" />
+                  )}
                 </div>
                 <div className="p-5 flex items-center gap-3">
-                  {/* Logo slot */}
-                  {/* TODO: sostituire con logo reale del partner */}
-                  <div className="w-11 h-11 rounded-lg border border-secondary-container bg-surface flex items-center justify-center shrink-0">
-                    <Building2 size={16} className="text-text-main/25" />
+                  {/* Logo */}
+                  <div className="relative w-11 h-11 rounded-lg border border-secondary-container bg-surface flex items-center justify-center shrink-0 overflow-hidden">
+                    {p.logo ? (
+                      <Image src={p.logo} alt={`Logo ${p.nome}`} fill sizes="44px" className="object-contain p-1.5" />
+                    ) : (
+                      <Building2 size={16} className="text-text-main/25" />
+                    )}
                   </div>
                   <h3 className="font-bold text-text-main text-sm leading-snug">{p.nome}</h3>
                 </div>

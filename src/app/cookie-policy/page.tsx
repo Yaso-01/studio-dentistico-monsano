@@ -24,13 +24,6 @@ export default function CookiePolicyPage() {
       <section className="w-full py-section bg-surface">
         <div className="max-w-3xl mx-auto px-6">
 
-          {/* Draft notice */}
-          <div className="bg-amber-50 border border-amber-200 rounded-xl px-5 py-4 mb-12">
-            <p className="text-sm text-amber-800 leading-relaxed">
-              ⚠️ Bozza da completare con i dati dello studio e da far verificare prima della pubblicazione definitiva.
-            </p>
-          </div>
-
           <div className="space-y-10 text-sm text-text-main/80 leading-relaxed">
 
             {/* 1 */}
@@ -95,9 +88,11 @@ export default function CookiePolicyPage() {
             <div className="space-y-3">
               <h2 className="text-base font-bold font-manrope text-text-main">4. Mappa (Google Maps)</h2>
               <p>
-                Le indicazioni stradali per raggiungere lo studio sono fornite tramite <strong className="text-text-main">link
-                esterni</strong> a Google Maps (Google LLC). Facendo clic su un collegamento mappa si viene reindirizzati al
-                sito di Google, dove si applicano le{" "}
+                Nella pagina Contatti è incorporata una <strong className="text-text-main">mappa Google Maps
+                (iframe)</strong> per ciascuna delle sedi dello studio. La mappa viene caricata solo dopo aver
+                accettato i cookie tramite il banner iniziale: fino a quel momento è mostrato un riquadro sostitutivo
+                con un collegamento per gestire le preferenze cookie. Una volta caricata, la mappa comporta la
+                connessione ai server di Google (Google LLC), dove si applicano le{" "}
                 <a
                   href="https://policies.google.com/privacy"
                   target="_blank"
@@ -106,13 +101,7 @@ export default function CookiePolicyPage() {
                 >
                   politiche sulla privacy di Google
                 </a>
-                . <strong className="text-text-main">Non è incorporata alcuna mappa tramite iframe</strong> in questa pagina:
-                il caricamento della pagina non comporta di per sé l&apos;invio di dati a Google né l&apos;impostazione di
-                cookie da parte di Google.
-              </p>
-              <p className="text-text-main/55 text-xs">
-                Qualora in futuro venisse integrata una mappa Google Maps incorporata (iframe), essa sarà gateata
-                dal consenso dell&apos;utente e aggiunta a questa policy.
+                .
               </p>
             </div>
 

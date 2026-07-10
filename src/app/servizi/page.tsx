@@ -97,6 +97,7 @@ export default function ServiziPage() {
           { step: "Monitoraggio", desc: "Controlli periodici per verificare i progressi del trattamento." },
         ]}
         heroImage="/images/servizi-diagnosi.jpg"
+        reverse={true}
       />
 
       <ServiceSection

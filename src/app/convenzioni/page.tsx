@@ -1,93 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle2, MapPin, Image as ImageIcon, Building2 } from "lucide-react";
 import Footer from "@/components/Footer";
 import FadeUp from "@/components/motion/FadeUp";
 
 const partner = [
   {
-    categoria: "Piscine",
-    nome: "Piscina Comunale Convenzionata",
-    desc: "Tariffa dedicata su visite e igiene professionale per tutti gli iscritti della piscina partner. Accesso prioritario all'agenda.",
-    image: "/images/filler_clinic_detail_1777946032605.png",
+    nome: "MTA — Centro Sportivo, Jesi",
+    foto: "/images/mta-centro-sportivo.jpg",
+    logo: "/images/mta-logo.png",
   },
   {
-    categoria: "Palestre",
-    nome: "Centro Sportivo Partner",
-    desc: "Sconto dedicato agli iscritti della palestra convenzionata su tutti i trattamenti. Pacchetti prevenzione riservati.",
-    image: "/images/hero_igiene_1777945951088.png",
+    nome: "Team Marche — Piscina di Chiaravalle",
+    foto: null,
+    logo: "/images/team-marche-logo.svg",
   },
   {
-    categoria: "Hotel",
-    nome: "Struttura Ricettiva Locale",
-    desc: "Servizio urgenze e visite programmate per gli ospiti delle strutture alberghiere partner. Disponibile in entrambe le sedi.",
-    image: "/images/filler_waiting_room_1777946017951.png",
+    nome: "Team Marche — Piscina di Jesi",
+    foto: null,
+    logo: "/images/team-marche-logo.svg",
   },
   {
-    categoria: "Attività Locali",
-    nome: "Attività Commerciali del Territorio",
-    desc: "Collaborazioni attive con realtà commerciali locali. Offerte dedicate a dipendenti e clienti abituali dei nostri partner.",
-    image: "/images/hero_ortodonzia_1777945982119.png",
-  },
-];
-
-const pacchetti = [
-  {
-    nome: "Igiene + Sbiancamento",
-    desc: "Seduta di igiene professionale e trattamento sbiancante in un unico appuntamento. Ideale per chi vuole un sorriso luminoso in tempi brevi.",
-    punti: ["Igiene GBT professionale", "Sbiancamento LED professionale", "Kit mantenimento domiciliare"],
-    image: "/images/hero_sbiancamento_1777945997300.png",
-  },
-  {
-    nome: "Smile Refresh",
-    desc: "Controllo completo, igiene professionale e valutazione estetica. Il punto di partenza per prendersi cura del proprio sorriso.",
-    punti: ["Visita di controllo completa", "Igiene professionale", "Valutazione estetica e percorso"],
-    image: "/images/hero_igiene_1777945951088.png",
-  },
-  {
-    nome: "Controllo + Pulizia",
-    desc: "Visita di controllo e seduta di igiene per mantenere la salute orale nel tempo. Consigliato ogni sei mesi.",
-    punti: ["Rx bite panoramica se necessaria", "Igiene professionale completa", "Piano di mantenimento personalizzato"],
-    image: "/images/hero_implantologia_1777945968659.png",
+    nome: "Team Marche — Piscina di Moie",
+    foto: null,
+    logo: "/images/team-marche-logo.svg",
   },
 ];
 
 const vantaggi = [
-  {
-    titolo: "Tariffe agevolate",
-    desc: "Condizioni economiche riservate agli iscritti e ai clienti dei partner convenzionati.",
-  },
-  {
-    titolo: "Accesso prioritario",
-    desc: "Agenda dedicata per prenotazioni più rapide in entrambe le sedi di Monsano e Agugliano.",
-  },
-  {
-    titolo: "Prevenzione attiva",
-    desc: "Percorsi di igiene e prevenzione studiati per specifiche categorie di pazienti (sportivi, anziani, bambini).",
-  },
-  {
-    titolo: "Comunicazione diretta",
-    desc: "Contatto diretto con il team clinico per urgenze e consulenze rapide.",
-  },
-];
-
-const faq = [
-  {
-    q: "Come faccio a sapere se sono convenzionato?",
-    a: "Basta contattarci indicando il nome della vostra struttura o associazione. Vi confermeremo la convenzione attiva e le condizioni riservate.",
-  },
-  {
-    q: "Le convenzioni sono valide in entrambe le sedi?",
-    a: "Sì, tutte le convenzioni sono valide sia nella sede di Monsano che in quella di Agugliano. Potete scegliere la sede più comoda.",
-  },
-  {
-    q: "Come può la mia attività diventare partner?",
-    a: "Contattateci tramite il modulo online o direttamente per telefono. Valuteremo insieme le modalità di collaborazione più adatte.",
-  },
-  {
-    q: "I pacchetti benessere sono disponibili per tutti?",
-    a: "I pacchetti sono disponibili per tutti i pazienti, con condizioni ulteriormente agevolate per i partner convenzionati.",
-  },
+  "Tariffe agevolate per partner e loro associati",
+  "Percorsi e pacchetti di trattamento personalizzati, pensati sulle esigenze di partner e associati.",
 ];
 
 export default function ConvenzioniPage() {
@@ -116,20 +58,14 @@ export default function ConvenzioniPage() {
                 Contattaci per info
                 <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5" />
               </Link>
-              <Link
-                href="#pacchetti"
-                className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-white/10 transition-colors duration-200"
-              >
-                Pacchetti Benessere
-              </Link>
             </div>
           </div>
 
           {/* Mini sedi badge */}
           <div className="hidden md:flex flex-col gap-3">
             {[
-              { nome: "Sede Monsano", indirizzo: "Via Roma 123, 60030" },
-              { nome: "Sede Agugliano", indirizzo: "Via Verdi 45, 60020" },
+              { nome: "Sede Monsano", indirizzo: "Largo Due Querce 85/B, 60030" },
+              { nome: "Sede Agugliano", indirizzo: "Via Sebastiano Petrelli 2/A, 60020" },
             ].map((s, i) => (
               <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-4 flex items-center gap-3">
                 <MapPin size={18} className="text-white/60 shrink-0" />
@@ -154,36 +90,34 @@ export default function ConvenzioniPage() {
             </div>
           </FadeUp>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {partner.map((p, i) => (
-              <FadeUp key={i} delay={i * 0.1}>
-                <div className="group flex flex-col sm:flex-row gap-5 rounded-xl border border-secondary-container overflow-hidden hover:shadow-lg hover:shadow-text-main/5 transition-all duration-300">
-                  {/* Immagine */}
-                  <div className="relative w-full sm:w-40 aspect-video sm:aspect-auto sm:h-auto flex-shrink-0 overflow-hidden">
-                    <Image
-                      src={p.image}
-                      alt={p.nome}
-                      fill
-                      sizes="160px"
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    />
+              <FadeUp key={i} delay={i * 0.08}>
+                <div className="rounded-xl border border-secondary-container bg-white overflow-hidden flex flex-col">
+                  {/* Foto */}
+                  <div className="relative w-full aspect-[4/3] bg-secondary-container/50 flex items-center justify-center border-b border-secondary-container">
+                    {p.foto ? (
+                      <Image
+                        src={p.foto}
+                        alt={p.nome}
+                        fill
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <ImageIcon size={22} className="text-text-main/25" />
+                    )}
                   </div>
-                  {/* Testo */}
-                  <div className="p-5 flex flex-col justify-between gap-3">
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-[10px] text-text-main/40 font-medium uppercase tracking-wider">{p.categoria}</span>
-                        <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full uppercase tracking-wide">
-                          Convenzionato
-                        </span>
-                      </div>
-                      <h3 className="font-bold text-text-main mb-2">{p.nome}</h3>
-                      <p className="text-sm text-text-main/60 leading-relaxed">{p.desc}</p>
+                  <div className="p-5 flex items-center gap-3">
+                    {/* Logo */}
+                    <div className="relative w-11 h-11 rounded-lg border border-secondary-container bg-surface flex items-center justify-center shrink-0 overflow-hidden">
+                      {p.logo ? (
+                        <Image src={p.logo} alt={`Logo ${p.nome}`} fill sizes="44px" className="object-contain p-1.5" />
+                      ) : (
+                        <Building2 size={16} className="text-text-main/25" />
+                      )}
                     </div>
-                    <Link href="/contatti" className="group/link inline-flex items-center gap-1.5 text-primary text-xs font-semibold">
-                      Chiedi informazioni
-                      <ArrowRight size={12} className="transition-transform duration-200 group-hover/link:translate-x-0.5" />
-                    </Link>
+                    <h3 className="font-bold text-text-main text-sm leading-snug">{p.nome}</h3>
                   </div>
                 </div>
               </FadeUp>
@@ -203,100 +137,15 @@ export default function ConvenzioniPage() {
             </div>
           </FadeUp>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {vantaggi.map((v, i) => (
               <FadeUp key={i} delay={i * 0.08}>
-                <div className="bg-white rounded-xl border border-secondary-container p-6 h-full">
-                  <CheckCircle2 size={20} className="text-primary mb-4" />
-                  <h3 className="font-bold text-text-main mb-2">{v.titolo}</h3>
-                  <p className="text-sm text-text-main/60 leading-relaxed">{v.desc}</p>
+                <div className="bg-white rounded-xl border border-secondary-container p-6 h-full flex items-start gap-3">
+                  <CheckCircle2 size={20} className="text-primary shrink-0 mt-0.5" />
+                  <p className="text-sm text-text-main/65 leading-relaxed">{v}</p>
                 </div>
               </FadeUp>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pacchetti Benessere */}
-      <section id="pacchetti" className="w-full py-section bg-white border-b border-secondary-container">
-        <div className="max-w-[1200px] mx-auto px-6">
-
-          <FadeUp>
-            <div className="mb-12">
-              <p className="text-primary font-semibold text-[11px] uppercase tracking-[0.15em] mb-2">Offerte Dedicate</p>
-              <h2 className="text-3xl font-bold font-manrope text-text-main tracking-tight">Pacchetti Benessere Sorriso</h2>
-              <p className="mt-2 text-sm text-text-main/55 max-w-lg">
-                Pacchetti clinici combinati per semplificare la cura del tuo sorriso. Condizioni vantaggiose per i partner convenzionati.
-              </p>
-            </div>
-          </FadeUp>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {pacchetti.map((pkg, i) => (
-              <FadeUp key={i} delay={i * 0.1}>
-                <div className="group flex flex-col rounded-xl border border-secondary-container overflow-hidden hover:shadow-lg hover:shadow-text-main/5 transition-all duration-300">
-                  {/* Immagine */}
-                  <div className="relative w-full aspect-video overflow-hidden">
-                    <Image
-                      src={pkg.image}
-                      alt={pkg.nome}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-text-main/20 to-transparent" />
-                  </div>
-                  {/* Contenuto */}
-                  <div className="p-6 flex flex-col gap-4 flex-1">
-                    <div>
-                      <h3 className="font-bold font-manrope text-text-main text-lg mb-2">{pkg.nome}</h3>
-                      <p className="text-sm text-text-main/60 leading-relaxed">{pkg.desc}</p>
-                    </div>
-                    <ul className="space-y-1.5">
-                      {pkg.punti.map((punto, j) => (
-                        <li key={j} className="flex items-center gap-2 text-xs text-text-main/60">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                          {punto}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link
-                      href="/contatti"
-                      className="mt-auto group/link inline-flex items-center gap-2 text-primary text-sm font-semibold"
-                    >
-                      Richiedi informazioni
-                      <ArrowRight size={14} className="transition-transform duration-200 group-hover/link:translate-x-0.5" />
-                    </Link>
-                  </div>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="w-full py-section bg-surface border-b border-secondary-container">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="max-w-2xl mx-auto">
-
-            <FadeUp>
-              <div className="mb-10 text-center">
-                <p className="text-primary font-semibold text-[11px] uppercase tracking-[0.15em] mb-2">Domande Frequenti</p>
-                <h2 className="text-3xl font-bold font-manrope text-text-main tracking-tight">FAQ Convenzioni</h2>
-              </div>
-            </FadeUp>
-
-            <div className="space-y-4">
-              {faq.map((item, i) => (
-                <FadeUp key={i} delay={i * 0.07}>
-                  <div className="bg-white rounded-xl border border-secondary-container p-6">
-                    <h3 className="font-bold text-text-main mb-2">{item.q}</h3>
-                    <p className="text-sm text-text-main/60 leading-relaxed">{item.a}</p>
-                  </div>
-                </FadeUp>
-              ))}
-            </div>
           </div>
         </div>
       </section>

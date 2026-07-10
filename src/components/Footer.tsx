@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import ManageCookiesButton from "@/components/ManageCookiesButton";
+import { STUDIO_PHONE, STUDIO_EMAIL } from "@/lib/contact";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -13,17 +14,13 @@ const navLinks = [
 const sedi = [
   {
     nome: "Sede di Monsano",
-    indirizzo: "Via Roma 123, 60030 Monsano (AN)",
-    telefono: "+39 0731 123456",
-    email: "monsano@fazibernacchia.it",
-    orari: "Lun–Ven 09:00–19:30 · Sab 09:00–13:00",
+    indirizzo: "Largo Due Querce 85/B, 60030 Monsano (AN)",
+    orari: "Lun 9:00–12:00 · 15:00–19:00 — Mar 15:00–19:00 (2 al mese) — Gio 15:00–19:00",
   },
   {
     nome: "Sede di Agugliano",
-    indirizzo: "Via Verdi 45, 60020 Agugliano (AN)",
-    telefono: "+39 071 987654",
-    email: "agugliano@fazibernacchia.it",
-    orari: "Lun–Ven 08:30–18:30 · Sab 09:00–12:30",
+    indirizzo: "Via Sebastiano Petrelli 2/A, 60020 Agugliano (AN)",
+    orari: "Mar 15:00–19:00 (2 al mese) — Mer 15:00–19:00 — Ven 9:00–12:00 · 15:00–19:00",
   },
 ];
 
@@ -85,14 +82,14 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={13} className="text-primary/70 shrink-0" />
-                <a href={`tel:${sedi[0].telefono.replace(/\s/g, "")}`} className="hover:text-white transition-colors">
-                  {sedi[0].telefono}
+                <a href={`tel:${STUDIO_PHONE.replace(/\s/g, "")}`} className="hover:text-white transition-colors">
+                  {STUDIO_PHONE}
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={13} className="text-primary/70 shrink-0" />
-                <a href={`mailto:${sedi[0].email}`} className="hover:text-white transition-colors">
-                  {sedi[0].email}
+                <a href={`mailto:${STUDIO_EMAIL}`} className="hover:text-white transition-colors">
+                  {STUDIO_EMAIL}
                 </a>
               </div>
               <div className="flex items-start gap-2">
@@ -112,14 +109,14 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={13} className="text-primary/70 shrink-0" />
-                <a href={`tel:${sedi[1].telefono.replace(/\s/g, "")}`} className="hover:text-white transition-colors">
-                  {sedi[1].telefono}
+                <a href={`tel:${STUDIO_PHONE.replace(/\s/g, "")}`} className="hover:text-white transition-colors">
+                  {STUDIO_PHONE}
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={13} className="text-primary/70 shrink-0" />
-                <a href={`mailto:${sedi[1].email}`} className="hover:text-white transition-colors">
-                  {sedi[1].email}
+                <a href={`mailto:${STUDIO_EMAIL}`} className="hover:text-white transition-colors">
+                  {STUDIO_EMAIL}
                 </a>
               </div>
               <div className="flex items-start gap-2">

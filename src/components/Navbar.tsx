@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Menu, X, MapPin } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { STUDIO_PHONE } from "@/lib/contact";
 
 const links = [
   { href: "/", label: "Home" },
@@ -24,12 +25,18 @@ export default function Navbar() {
         <div className="max-w-[1200px] mx-auto px-6 h-8 flex items-center gap-5 text-[11px] text-text-main/50 font-medium">
           <span className="flex items-center gap-1.5">
             <MapPin size={11} className="text-primary/70" />
-            Monsano (AN) · +39 0731 123456
+            Monsano (AN) ·{" "}
+            <a href={`tel:${STUDIO_PHONE.replace(/\s/g, "")}`} className="hover:text-primary transition-colors">
+              {STUDIO_PHONE}
+            </a>
           </span>
           <span className="hidden sm:block w-px h-3 bg-secondary-container" />
           <span className="hidden sm:flex items-center gap-1.5">
             <MapPin size={11} className="text-primary/70" />
-            Agugliano (AN) · +39 071 987654
+            Agugliano (AN) ·{" "}
+            <a href={`tel:${STUDIO_PHONE.replace(/\s/g, "")}`} className="hover:text-primary transition-colors">
+              {STUDIO_PHONE}
+            </a>
           </span>
         </div>
       </div>

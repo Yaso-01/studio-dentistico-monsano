@@ -1,30 +1,26 @@
-import Image from "next/image";
+import { Syringe, ShieldCheck, Puzzle, Smile } from "lucide-react";
 import FadeUp from "@/components/motion/FadeUp";
 
 const altriServizi = [
   {
     title: "Endodonzia",
     desc: "Rimozione della polpa (nervi e vasi all'interno del dente) infetta e successiva sigillatura dei canali.",
-    // TODO: aggiungere foto reale
-    image: "/images/filler_clinic_detail_1777946032605.png",
+    icon: Syringe,
   },
   {
     title: "Conservativa",
     desc: "Rimozione del tessuto dentale danneggiato da carie, ricostruendo forma e funzione.",
-    // TODO: aggiungere foto reale
-    image: "/images/filler_clinic_detail_1777946032605.png",
+    icon: ShieldCheck,
   },
   {
     title: "Protesi Dentale",
     desc: "Progettazione e applicazione di dispositivi medici su misura (protesi fissa su denti e impianti, protesi mobile, scheletrata, faccette in ceramica) per ripristinare le funzioni masticatorie, fonetiche ed estetiche.",
-    // TODO: aggiungere foto reale
-    image: "/images/filler_clinic_detail_1777946032605.png",
+    icon: Puzzle,
   },
   {
     title: "Pedodonzia",
     desc: "Prevenzione (igiene e sigillatura) e cura dei denti da latte.",
-    // TODO: aggiungere foto reale
-    image: "/images/filler_clinic_detail_1777946032605.png",
+    icon: Smile,
   },
 ];
 
@@ -50,14 +46,8 @@ export default function AltriServizi() {
           {altriServizi.map((servizio, index) => (
             <FadeUp key={index} delay={index * 0.08}>
               <div className="group flex gap-4 p-5 rounded-xl bg-white border border-secondary-container hover:shadow-md hover:shadow-text-main/5 transition-all duration-300 h-full">
-                <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden">
-                  <Image
-                    src={servizio.image}
-                    alt={servizio.title}
-                    fill
-                    sizes="80px"
-                    className="object-cover"
-                  />
+                <div className="w-20 h-20 flex-shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <servizio.icon size={32} strokeWidth={1.5} className="text-primary" />
                 </div>
                 <div>
                   <h3 className="font-bold text-text-main text-sm mb-1.5">{servizio.title}</h3>
