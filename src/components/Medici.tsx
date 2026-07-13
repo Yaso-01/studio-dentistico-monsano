@@ -78,8 +78,7 @@ const staff = [
     nome: "Agnese Bordoni",
     ruolo: "Igienista Dentale",
     desc: "Sono Agnese Bordoni, igienista dentale laureata nel 2015 presso l'Università Politecnica delle Marche. Credo che un sorriso sano nasca dalla prevenzione, dall'ascolto e da un rapporto di fiducia con ogni paziente.",
-    // TODO: aggiungere foto reale quando disponibile
-    foto: null,
+    foto: "/images/team/bordoni-agnese.jpg",
   },
 ];
 
@@ -112,7 +111,7 @@ export default function Medici({ preview = false }: { preview?: boolean }) {
                         alt={medico.nome}
                         fill
                         sizes="80px"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                       />
                     ) : (
                       <div className="w-full h-full bg-primary/10 flex items-center justify-center">
@@ -182,7 +181,7 @@ export default function Medici({ preview = false }: { preview?: boolean }) {
                             alt={persona.nome}
                             fill
                             sizes="80px"
-                            className="object-cover"
+                            className="object-cover object-top"
                           />
                         ) : (
                           <div className="w-full h-full bg-primary/10 flex items-center justify-center">

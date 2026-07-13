@@ -11,20 +11,17 @@ const partner = [
   },
   {
     nome: "Team Marche — Piscina di Chiaravalle",
-    // TODO: aggiungere foto piscina
-    foto: null,
+    foto: "/images/piscina-chiaravalle.jpg",
     logo: "/images/team-marche-logo.svg",
   },
   {
     nome: "Team Marche — Piscina di Jesi",
-    // TODO: aggiungere foto piscina
-    foto: null,
+    foto: "/images/piscina-jesi.jpg",
     logo: "/images/team-marche-logo.svg",
   },
   {
     nome: "Team Marche — Piscina di Moie",
-    // TODO: aggiungere foto piscina
-    foto: null,
+    foto: "/images/piscina-moie.jpg",
     logo: "/images/team-marche-logo.svg",
   },
 ];

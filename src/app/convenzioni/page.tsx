@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, MapPin, Image as ImageIcon, Building2 } from "lucide-react";
 import Footer from "@/components/Footer";
 import FadeUp from "@/components/motion/FadeUp";
+import { promo } from "@/lib/promo";
 
 const partner = [
   {
@@ -12,17 +13,17 @@ const partner = [
   },
   {
     nome: "Team Marche — Piscina di Chiaravalle",
-    foto: null,
+    foto: "/images/piscina-chiaravalle.jpg",
     logo: "/images/team-marche-logo.svg",
   },
   {
     nome: "Team Marche — Piscina di Jesi",
-    foto: null,
+    foto: "/images/piscina-jesi.jpg",
     logo: "/images/team-marche-logo.svg",
   },
   {
     nome: "Team Marche — Piscina di Moie",
-    foto: null,
+    foto: "/images/piscina-moie.jpg",
     logo: "/images/team-marche-logo.svg",
   },
 ];
@@ -125,6 +126,36 @@ export default function ConvenzioniPage() {
           </div>
         </div>
       </section>
+
+      {/* Pacchetto Promozionale */}
+      {promo.active && (
+        <section className="w-full py-section bg-white border-b border-secondary-container">
+          <div className="max-w-[1200px] mx-auto px-6">
+            <FadeUp>
+              <div className="bg-primary rounded-2xl p-10 md:p-14 flex flex-col md:flex-row md:items-center gap-10">
+                <div className="flex-1 min-w-0 space-y-3">
+                  <p className="text-white/50 text-[11px] font-semibold uppercase tracking-[0.15em]">{promo.eyebrow}</p>
+                  <h2 className="text-3xl font-bold font-manrope text-white tracking-tight leading-snug">{promo.title}</h2>
+                  <p className="text-white/75 text-base">{promo.offer}</p>
+                  <p className="text-white/55 text-sm leading-relaxed max-w-lg">{promo.note}</p>
+                </div>
+                <div className="flex flex-col items-start gap-4 shrink-0 md:border-l md:border-white/15 md:pl-10">
+                  <p className="text-4xl md:text-5xl font-bold font-manrope text-white tracking-tight whitespace-nowrap">
+                    {promo.price}
+                  </p>
+                  <Link
+                    href="/contatti"
+                    className="group inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-md text-sm font-semibold hover:bg-white/90 transition-colors duration-200 whitespace-nowrap"
+                  >
+                    {promo.ctaLabel}
+                    <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5" />
+                  </Link>
+                </div>
+              </div>
+            </FadeUp>
+          </div>
+        </section>
+      )}
 
       {/* Vantaggi */}
       <section className="w-full py-section bg-surface border-b border-secondary-container">
