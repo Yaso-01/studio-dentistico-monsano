@@ -63,8 +63,7 @@ const staff = [
   {
     nome: "Alessia Papili",
     ruolo: "ASO",
-    // TODO: testo in bozza, da far approvare al cliente
-    desc: "Supporto clinico e organizzativo durante le procedure odontoiatriche.",
+    desc: "Da sempre punto di riferimento per i pazienti. Accoglie e prepara i pazienti contribuendo alla bellezza del loro sorriso.",
     // TODO: aggiungere foto reale quando disponibile
     foto: null,
   },
