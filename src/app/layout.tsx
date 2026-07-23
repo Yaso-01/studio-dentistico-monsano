@@ -4,13 +4,30 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 import CookieBanner from "@/components/CookieBanner";
+import StructuredData from "@/components/structured-data";
+import { SITE_URL } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Studio Dentistico Fazi e Bernacchia | Monsano & Agugliano",
-  description: "Studio dentistico professionale con sedi a Monsano e Agugliano (AN). Igiene, implantologia, ortodonzia e convenzioni territoriali.",
+  description: "Studio dentistico Fazi e Bernacchia: igiene, implantologia, ortodonzia, parodontologia e sbiancamento a Monsano e Agugliano (AN). Due sedi, convenzioni territoriali e assistenza professionale per tutta la famiglia.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Studio Dentistico Fazi e Bernacchia | Monsano & Agugliano",
+    description: "Studio dentistico Fazi e Bernacchia: igiene, implantologia, ortodonzia, parodontologia e sbiancamento a Monsano e Agugliano (AN). Due sedi, convenzioni territoriali e assistenza professionale per tutta la famiglia.",
+    url: SITE_URL,
+    siteName: "Studio Dentistico Fazi e Bernacchia",
+    locale: "it_IT",
+    type: "website",
+  },
+  verification: {
+    google: "INSERIRE_CODICE_SEARCH_CONSOLE", // TODO: sostituire con il meta tag di verifica da Google Search Console
+  },
 };
 
 export default function RootLayout({
@@ -21,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body className={`${inter.variable} ${manrope.variable} antialiased`}>
+        <StructuredData />
         <Navbar />
         <main>{children}</main>
         <WhatsAppFAB />

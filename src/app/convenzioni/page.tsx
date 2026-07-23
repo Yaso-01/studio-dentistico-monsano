@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, MapPin, Image as ImageIcon, Building2 } from "lucide-react";
@@ -5,11 +6,19 @@ import Footer from "@/components/Footer";
 import FadeUp from "@/components/motion/FadeUp";
 import { promo } from "@/lib/promo";
 
+export const metadata: Metadata = {
+  title: "Convenzioni e Partnership | Studio Dentistico Fazi e Bernacchia",
+  description: "Le convenzioni attive dello Studio Dentistico Fazi e Bernacchia con realtà del territorio di Monsano e Agugliano (AN): tariffe agevolate per partner e associati.",
+  alternates: {
+    canonical: "/convenzioni",
+  },
+};
+
 const partner = [
   {
     nome: "MTA — Centro Sportivo, Jesi",
     foto: "/images/mta-centro-sportivo.jpg",
-    logo: "/images/mta-logo.png",
+    logo: "/images/mta-logo.jpeg",
   },
   {
     nome: "Team Marche — Piscina di Chiaravalle",
@@ -25,6 +34,11 @@ const partner = [
     nome: "Team Marche — Piscina di Moie",
     foto: "/images/piscina-moie.jpg",
     logo: "/images/team-marche-logo.svg",
+  },
+  {
+    nome: "Bodyline — Palestra, Jesi",
+    foto: "/images/bodyline-palestra.jpg",
+    logo: "/images/bodyline-logo.jpeg",
   },
 ];
 
@@ -91,10 +105,14 @@ export default function ConvenzioniPage() {
             </div>
           </FadeUp>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {partner.map((p, i) => (
-              <FadeUp key={i} delay={i * 0.08}>
-                <div className="rounded-xl border border-secondary-container bg-white overflow-hidden flex flex-col">
+              <FadeUp
+                key={i}
+                delay={i * 0.08}
+                className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(20%-0.8rem)]"
+              >
+                <div className="rounded-xl border border-secondary-container bg-white overflow-hidden flex flex-col h-full">
                   {/* Foto */}
                   <div className="relative w-full aspect-[4/3] bg-secondary-container/50 flex items-center justify-center border-b border-secondary-container">
                     {p.foto ? (

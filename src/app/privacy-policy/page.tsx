@@ -4,6 +4,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | Studio Dentistico Fazi e Bernacchia",
   robots: { index: false },
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {
@@ -33,7 +36,7 @@ export default function PrivacyPolicyPage() {
                 <strong className="text-text-main">Studio Dentistico Associato Dott. Francesco Fazi e Dott.ssa Ilaria Bernacchia Ricciotti</strong><br />
                 Via Sebastiano Petrelli 2/A, 60020 Agugliano (AN)<br />
                 P.IVA e C.F. 02297070423<br />
-                {"Email: info@studiodentisticofb.it"}<br />
+                {"Email: info@studiodentisticofazibernacchia.it"}<br />
                 {"Telefono: 071 908191"}
               </p>
             </div>
@@ -128,7 +131,7 @@ export default function PrivacyPolicyPage() {
               <p>
                 Per esercitare i propri diritti o per qualsiasi informazione relativa al trattamento dei dati personali,
                 è possibile contattare il Titolare del Trattamento scrivendo a:{" "}
-                <strong className="text-text-main">info@studiodentisticofb.it</strong>.
+                <strong className="text-text-main">info@studiodentisticofazibernacchia.it</strong>.
               </p>
             </div>
 

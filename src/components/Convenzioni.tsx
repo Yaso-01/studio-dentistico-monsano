@@ -7,7 +7,7 @@ const partner = [
   {
     nome: "MTA — Centro Sportivo, Jesi",
     foto: "/images/mta-centro-sportivo.jpg",
-    logo: "/images/mta-logo.png",
+    logo: "/images/mta-logo.jpeg",
   },
   {
     nome: "Team Marche — Piscina di Chiaravalle",
@@ -23,6 +23,11 @@ const partner = [
     nome: "Team Marche — Piscina di Moie",
     foto: "/images/piscina-moie.jpg",
     logo: "/images/team-marche-logo.svg",
+  },
+  {
+    nome: "Bodyline — Palestra, Jesi",
+    foto: "/images/bodyline-palestra.jpg",
+    logo: "/images/bodyline-logo.jpeg",
   },
 ];
 
@@ -61,10 +66,14 @@ export default function Convenzioni() {
         </FadeUp>
 
         {/* Partner cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+        <div className="flex flex-wrap justify-center gap-4 mb-14">
           {partner.map((p, i) => (
-            <FadeUp key={i} delay={i * 0.08}>
-              <div className="rounded-xl border border-secondary-container bg-white overflow-hidden flex flex-col">
+            <FadeUp
+              key={i}
+              delay={i * 0.08}
+              className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(20%-0.8rem)]"
+            >
+              <div className="rounded-xl border border-secondary-container bg-white overflow-hidden flex flex-col h-full">
                 {/* Foto */}
                 <div className="relative w-full aspect-[4/3] bg-secondary-container/50 flex items-center justify-center border-b border-secondary-container">
                   {p.foto ? (

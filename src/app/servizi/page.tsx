@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import ServiceSection from "@/components/ServiceSection";
 import AltriServizi from "@/components/AltriServizi";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Servizi | Studio Dentistico Fazi e Bernacchia",
+  description: "Igiene dentale, implantologia, ortodonzia, parodontologia e sbiancamento: le specializzazioni dello Studio Dentistico Fazi e Bernacchia a Monsano e Agugliano (AN).",
+  alternates: {
+    canonical: "/servizi",
+  },
+};
 
 export default function ServiziPage() {
   return (

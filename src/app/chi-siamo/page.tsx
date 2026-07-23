@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import Medici from "@/components/Medici";
 import Valori from "@/components/Valori";
 import Footer from "@/components/Footer";
 import FadeUp from "@/components/motion/FadeUp";
+
+export const metadata: Metadata = {
+  title: "Chi Siamo | Studio Dentistico Fazi e Bernacchia",
+  description: "Scopri il team e i valori dello Studio Dentistico Fazi e Bernacchia, con sedi a Monsano e Agugliano (AN).",
+  alternates: {
+    canonical: "/chi-siamo",
+  },
+};
 
 export default function ChiSiamoPage() {
   return (

@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Contatti from "@/components/Contatti";
 import Footer from "@/components/Footer";
 import FadeUp from "@/components/motion/FadeUp";
+
+export const metadata: Metadata = {
+  title: "Contatti | Studio Dentistico Fazi e Bernacchia",
+  description: "Contatta lo Studio Dentistico Fazi e Bernacchia: sedi a Monsano e Agugliano (AN), telefono, email e modulo per prenotare una visita.",
+  alternates: {
+    canonical: "/contatti",
+  },
+};
 
 export default function ContattiPage() {
   return (
