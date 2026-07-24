@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   verification: {
-    google: "INSERIRE_CODICE_SEARCH_CONSOLE", // TODO: sostituire con il meta tag di verifica da Google Search Console
+    google: "DAOAc2znMW2RoJJdx_vrlF7s8LZOgq6_bCx8Zv-vNlg",
   },
 };
 
