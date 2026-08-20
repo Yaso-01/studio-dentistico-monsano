@@ -10,7 +10,7 @@ interface ServiceSectionProps {
   process: { step: string; desc: string }[];
   heroImage: string;
   reverse?: boolean;
-  imageAnchor?: "center" | "bottom";
+  imageAnchor?: "center" | "top";
 }
 
 export default function ServiceSection({
@@ -41,7 +41,7 @@ export default function ServiceSection({
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className={`object-cover ${
-                  imageAnchor === "bottom" ? "object-bottom" : "object-center"
+                  imageAnchor === "top" ? "object-top" : "object-center"
                 } transition-transform duration-700 ease-out group-hover:scale-[1.03]`}
               />
             </div>

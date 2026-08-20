@@ -49,7 +49,7 @@ export default function ServiziPage() {
         ]}
         heroImage="/images/servizi-faccette.jpeg"
         reverse={true}
-        imageAnchor="bottom"
+        imageAnchor="top"
       />
 
       <ServiceSection
