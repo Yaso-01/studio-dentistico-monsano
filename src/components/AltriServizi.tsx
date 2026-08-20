@@ -1,4 +1,4 @@
-import { Syringe, ShieldCheck, Puzzle, Smile } from "lucide-react";
+import { Syringe, ShieldCheck, Smile } from "lucide-react";
 import FadeUp from "@/components/motion/FadeUp";
 
 const altriServizi = [
@@ -11,11 +11,6 @@ const altriServizi = [
     title: "Conservativa",
     desc: "Rimozione del tessuto dentale danneggiato da carie, ricostruendo forma e funzione.",
     icon: ShieldCheck,
-  },
-  {
-    title: "Protesi Dentale",
-    desc: "Progettazione e applicazione di dispositivi medici su misura (protesi fissa su denti e impianti, protesi mobile, scheletrata, faccette in ceramica) per ripristinare le funzioni masticatorie, fonetiche ed estetiche.",
-    icon: Puzzle,
   },
   {
     title: "Pedodonzia",
@@ -42,7 +37,7 @@ export default function AltriServizi() {
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {altriServizi.map((servizio, index) => (
             <FadeUp key={index} delay={index * 0.08}>
               <div className="group flex gap-4 p-5 rounded-xl bg-white border border-secondary-container hover:shadow-md hover:shadow-text-main/5 transition-all duration-300 h-full">

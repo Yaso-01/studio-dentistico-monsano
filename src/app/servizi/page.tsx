@@ -29,6 +29,30 @@ export default function ServiziPage() {
       </div>
 
       <ServiceSection
+        title="Protesi Dentali"
+        description="Permette di riabilitare funzione ed estetica delle arcate dentarie."
+        benefits={[
+          // TODO: testo in bozza, da far approvare al cliente
+          "Ripristina una masticazione efficace e naturale",
+          // TODO: testo in bozza, da far approvare al cliente
+          "Migliora l'estetica del sorriso",
+          // TODO: testo in bozza, da far approvare al cliente
+          "Soluzioni su misura per ogni esigenza",
+          // TODO: testo in bozza, da far approvare al cliente
+          "Materiali di qualità per risultati duraturi",
+        ]}
+        process={[
+          { step: "Studio del Caso", desc: "Tramite foto, modelli e analisi della funzione masticatoria." },
+          { step: "Preparazione", desc: "Limatura dei denti per applicare i provvisori." },
+          { step: "Prova Estetica e Funzionale", desc: "Si valuta la precisione del manufatto e la qualità estetica." },
+          { step: "Consegna", desc: "Cementazione definitiva del manufatto protesico." },
+        ]}
+        heroImage="/images/servizi-faccette.jpeg"
+        reverse={true}
+        imageAnchor="bottom"
+      />
+
+      <ServiceSection
         title="Igiene Dentale"
         description="La prevenzione è la base di un sorriso sano e duraturo. Procedura in cui si rimuove placca e tartaro, prevenendo parodontiti e gengiviti."
         benefits={[
@@ -58,7 +82,7 @@ export default function ServiziPage() {
           { step: "Chirurgia", desc: "Inserimento della o delle viti implantari nell'osso." },
           { step: "Carico Protesico", desc: "Inserimento di corona o protesi definitiva sopra gli impianti." },
         ]}
-        heroImage="/images/servizi-intervento.jpg"
+        heroImage="/images/servizi-implantologia.jpeg"
         reverse={true}
       />
 
@@ -81,8 +105,7 @@ export default function ServiziPage() {
           { step: "Terapia Chirurgica", desc: "Nei casi più avanzati, quando necessaria." },
           { step: "Mantenimento", desc: "Richiami periodici per la salute gengivale nel tempo." },
         ]}
-        // TODO: sostituire con foto reale del servizio Parodontologia
-        heroImage="/images/filler_clinic_detail_1777946032605.png"
+        heroImage="/images/servizi-intervento.jpg"
       />
 
       <ServiceSection

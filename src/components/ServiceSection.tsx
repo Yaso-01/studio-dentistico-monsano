@@ -10,6 +10,7 @@ interface ServiceSectionProps {
   process: { step: string; desc: string }[];
   heroImage: string;
   reverse?: boolean;
+  imageAnchor?: "center" | "bottom";
 }
 
 export default function ServiceSection({
@@ -19,6 +20,7 @@ export default function ServiceSection({
   process,
   heroImage,
   reverse = false,
+  imageAnchor = "center",
 }: ServiceSectionProps) {
   return (
     <section className="w-full py-section border-b border-secondary-container bg-white last:border-0">
@@ -38,7 +40,9 @@ export default function ServiceSection({
                 alt={title}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                className={`object-cover ${
+                  imageAnchor === "bottom" ? "object-bottom" : "object-center"
+                } transition-transform duration-700 ease-out group-hover:scale-[1.03]`}
               />
             </div>
           </FadeUp>
